@@ -44,7 +44,7 @@ const Track: React.FC<TrackProps> = ({
     return (
         <div className={styles.trackWrapper} ref={ref}>
             <div className={styles.rank}>
-                <div className='absolute right-0 pointer-events-none w-full h-full'>
+                <div className='absolute right-0 flex justify-end pointer-events-none w-full h-full'>
                     {hover ? (
                         currentlyPlaying ? (
                             <Pause />

@@ -7,9 +7,7 @@ const TrackList: React.FC = ({ children }) => {
         <div className=''>
             <div className={styles.header}>
                 <div className={styles.rank}>
-                    {/* <div className='absolute right-0'> */}
-                    <Hash size={12} />
-                    {/* </div> */}
+                    <Hash size={14} />
                 </div>
                 <p>Title</p>
                 <div>abc</div>

@@ -44,6 +44,8 @@
     grid-template-columns: auto 1fr auto;
     height: 36px;
     align-items: center;
+    position: sticky;
+    top: 0;
 
     @apply px-4 text-light200 border-b border-light300 mb-4;
 }
