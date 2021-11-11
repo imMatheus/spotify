@@ -1,7 +1,7 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import styles from 'styles/Track.module.scss'
 import { getTrackTime } from '@/utils/getTrackTime'
-import useHover from '@/hooks/useHover'
+import { useHover } from '@/hooks/useHover'
 
 interface TrackProps {
     rank: number
@@ -39,8 +39,7 @@ const Track: React.FC<TrackProps> = ({
     time,
     currentlyPlaying,
 }) => {
-    const ref = useRef<HTMLDivElement>(null)
-    const hover = useHover(ref)
+    const [ref, hover] = useHover<HTMLDivElement>()
     return (
         <div className={styles.trackWrapper} ref={ref}>
             <div className={styles.rank}>

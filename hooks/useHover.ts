@@ -1,11 +1,23 @@
-import { useState } from 'react'
-import useEventListener from './useEventListener'
+import { useEffect, useState, useRef, MutableRefObject } from 'react'
 
-export default function useHover(ref: any) {
-    const [hovered, setHovered] = useState(false)
-
-    useEventListener('mouseover', () => setHovered(true), ref.current)
-    useEventListener('mouseout', () => setHovered(false), ref.current)
-
-    return hovered
+export function useHover<T>(): [MutableRefObject<T>, boolean] {
+    const [value, setValue] = useState<boolean>(false)
+    const ref: any = useRef<T | null>(null)
+    const handleMouseOver = (): void => setValue(true)
+    const handleMouseOut = (): void => setValue(false)
+    useEffect(
+        () => {
+            const node: any = ref.current
+            if (node) {
+                node.addEventListener('mouseover', handleMouseOver)
+                node.addEventListener('mouseout', handleMouseOut)
+                return () => {
+                    node.removeEventListener('mouseover', handleMouseOver)
+                    node.removeEventListener('mouseout', handleMouseOut)
+                }
+            }
+        },
+        [ref.current] // Recall only if ref changes
+    )
+    return [ref, value]
 }

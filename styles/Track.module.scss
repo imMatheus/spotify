@@ -51,10 +51,10 @@
 }
 
 .playingWrapper {
-    width: 100%;
+    width: 16px;
     height: 16px;
     display: grid;
-    column-gap: 1px;
+    // column-gap: 1px;
     align-items: flex-end;
     @apply grid-cols-4;
 }
@@ -62,10 +62,10 @@
 .playingBar {
     width: 3px;
     height: 100%;
-    animation: playingbar 600ms infinite alternate-reverse ease-out;
+    animation: playingbar 450ms infinite alternate ease-in-out;
     @for $i from 1 through 4 {
         &:nth-child(#{$i}) {
-            animation-delay: -400ms * ($i - 1);
+            animation-delay: -610ms * ($i - 1);
         }
     }
 
