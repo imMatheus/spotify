@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+.lines-1 {
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    white-space: unset;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    line-height: 2rem;
+}
+
 body {
     @apply font-sans;
 }

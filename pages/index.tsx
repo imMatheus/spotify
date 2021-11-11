@@ -8,7 +8,6 @@ import useHover from '@/hooks/useHover'
 import React, { useRef } from 'react'
 import Link from 'next/link'
 import { Play } from 'react-feather'
-
 interface CardProps {
     title: string
     subtitle: string

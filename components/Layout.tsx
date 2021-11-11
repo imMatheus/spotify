@@ -29,7 +29,7 @@ const Layout: React.FC = ({ children }) => {
         <section className='h-screen w-screen flex text-sm text-light bg-dark600'>
             <LeftSidebar />
             <div className='w-full overflow-y-scroll'>
-                <div className='flex justify-between p-4 sticky top-0 z-10'>
+                <div className='flex justify-between p-4 fixed top-0 z-30'>
                     <div className='flex'>
                         <CircleButton onClick={router.back}>
                             <ChevronLeft />
@@ -41,7 +41,7 @@ const Layout: React.FC = ({ children }) => {
                 </div>
                 {children}
             </div>
-            <RightSidebar />
+            {/* <RightSidebar /> */}
         </section>
     )
 }

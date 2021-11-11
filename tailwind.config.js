@@ -1,4 +1,5 @@
 module.exports = {
+    mode: 'jit',
     purge: [
         './pages/**/*.{js,ts,jsx,tsx}',
         './components/**/*.{js,ts,jsx,tsx}',
@@ -19,6 +20,8 @@ module.exports = {
                 light: '#ffffff',
                 light100: '#ffffff4d',
                 light200: '#b3b3b3',
+                light300: '#ffffff1a',
+                light400: '#ffffffb3',
                 primary: '#1db954',
                 secondary: '#2e77d0',
             },

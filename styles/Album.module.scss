@@ -1,0 +1,35 @@
+.albumWrapper {
+    // background-image: linear-gradient(red, black);
+    position: relative;
+    min-height: 380px;
+    max-height: 540px;
+    @apply flex px-6 pb-6 items-end;
+    > * {
+        z-index: 5;
+    }
+    &::after {
+        content: '';
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        // background-color: pink;
+        position: absolute;
+        opacity: 0.68;
+        @apply bg-red-400;
+    }
+
+    &::before {
+        content: '';
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        // background-color: pink;
+        z-index: 1;
+        position: absolute;
+        transform: translateY(100%);
+        opacity: 0.18;
+        @apply bg-gradient-to-b from-red-400 to-transparent;
+    }
+}
