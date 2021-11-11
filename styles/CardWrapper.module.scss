@@ -1,0 +1,40 @@
+.cardWrapper {
+    // padding: 0.5em;
+    display: grid;
+    column-gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    grid-template-rows: 1fr;
+    grid-auto-rows: 0;
+    overflow-y: hidden;
+    // @apply bg-secondary;
+}
+
+.subtitle {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @apply text-sm font-normal text-light200;
+}
+
+.playButton {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // pointer-events: none;
+    @apply right-2 bottom-2 w-10 h-10 bg-primary rounded-full;
+    transition: all 150ms ease-out;
+    transform: translateY(0%);
+    opacity: 1;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.transformedPlayButton {
+    transform: translateY(100%);
+    opacity: 0;
+}
