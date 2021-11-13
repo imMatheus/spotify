@@ -3,10 +3,7 @@ import type { NextPage } from 'next'
 import AlbumWrapper from '@/components/AlbumWrapper'
 import TrackList from '@/components/TrackList'
 import Track from '@/components/Track'
-import { Hash } from 'react-feather'
 import AlbumBanner from '@/components/AlbumBanner'
-import { getTrackTime } from '@/utils/getTrackTime'
-import { performance } from 'universal-perf-hooks'
 
 const a: NextPage = () => {
     return (

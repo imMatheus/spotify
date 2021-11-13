@@ -4,10 +4,11 @@ import styles from 'styles/CardWrapper.module.scss'
 import jb from '../jb.png'
 import logang from '../logang.jpeg'
 import posti from '../posti.jpeg'
-import useHover from '@/hooks/useHover'
+import { useHover } from '@/hooks/useHover'
 import React, { useRef } from 'react'
 import Link from 'next/link'
 import { Play } from 'react-feather'
+import useAuth from '@/context/useAuth'
 interface CardProps {
     title: string
     subtitle: string
@@ -15,8 +16,7 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({ title, subtitle, image }) => {
-    const ref = useRef<any>(null)
-    let hover = useHover(ref)
+    let [ref, hover] = useHover<HTMLDivElement>()
     return (
         <Link href='/' passHref>
             <div

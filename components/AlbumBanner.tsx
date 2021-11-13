@@ -2,6 +2,7 @@ import React from 'react'
 import jb from '../jb.png'
 import Image from 'next/image'
 import styles from 'styles/Album.module.scss'
+import { useStore } from '@/context/StateContext'
 
 interface AlbumBannerProps {}
 
@@ -10,6 +11,9 @@ const Dot = () => (
 )
 
 const AlbumBanner: React.FC<AlbumBannerProps> = ({}) => {
+    const state = useStore()
+    console.log('state--------------------------------')
+    console.log(state)
     return (
         <div className={styles.albumWrapper}>
             <div className='flex-shrink-0 w-52 h-52 xl:w-64 xl:h-64 md:w-56 md:h-56 mr-4'>
@@ -23,7 +27,13 @@ const AlbumBanner: React.FC<AlbumBannerProps> = ({}) => {
             </div>
             <div className='self-end'>
                 <p>Album</p>
-                <h1 className='xl:text-7xl md:text-6xl sm:text-5xl text-4xl font-bold py-2'>
+                <h1
+                    className='xl:text-7xl md:text-6xl sm:text-5xl text-4xl font-bold py-2'
+                    onClick={
+                        () => null
+                        // state.dispatch({ type: 'LOGIN', payload: 'rrrr' })
+                    }
+                >
                     Future Nostalgia Edition
                 </h1>
                 <div className='flex items-center gap-1'>
